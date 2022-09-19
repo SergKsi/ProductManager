@@ -21,7 +21,6 @@ public class ProductManager {
         return repo.getItems();
     }
 
-
 //    public Product[] searchBy(String text) {
 //        Product[] result = new Product[0]; // тут будем хранить подошедшие запросу продукт
 //        for (Product product : getProd()) {
@@ -33,18 +32,18 @@ public class ProductManager {
 //    }
 
     public Product[] searchBy1(String text) {
-        Product[] product = getProd(); // в product грузим все элементы
+        Product[] all = getProd(); // в product грузим все элементы
         int count = 0;                  // счетчик для определения длины нового массива
-        for (int i = 0; i < getProd().length; i++) {
-            if (matches(product[i], text)) {
+        for (int i = 0; i < all.length; i++) {
+            if (matches(all[i], text)) {
                 count++;
             }
         }
         Product[] result = new Product[count]; // в result массив нужной длины
         int countElements = 0;
-        for (int i = 0; i < getProd().length; i++) {
-            if (matches(product[i], text)) {
-                result[countElements] = product[i]; // копируем все элементы
+        for (int i = 0; i < all.length; i++) {
+            if (matches(all[i], text)) {
+                result[countElements] = all[i]; // копируем все элементы
                 countElements++; //
             }
         }
@@ -54,15 +53,13 @@ public class ProductManager {
 
     // метод определения соответствия товара product запросу search
     public boolean matches(Product product, String search) {
-        return product.getNameProduct().contains(search);
+        if (product.matches(search)) {
+            return true;
+        } else {
+            return false;
+        }
+//        return product.getNameProduct().contains(search);
     }
 
-//    public static Product[] compress(Product[] product) {
-//        Product[] result = new Product[product.length];
-//        int i = 0;
-//        for (Product value : product) {
-//            if (value != null) result[i++] = value;
-//        }
-//        return result;
-//    }
+
 }

@@ -2,10 +2,10 @@ public class Book extends Product {
 
     private String authorBook;
 
-//    public String getAuthorBook() {
-//        return authorBook;
-//    }
-//
+    public String getAuthorBook() {
+        return authorBook;
+    }
+
 //    public void setAuthorBook(String authorBook) {
 //        this.authorBook = authorBook;
 //    }
@@ -14,7 +14,18 @@ public class Book extends Product {
         super(id, nameProduct, costProduct);
         this.authorBook = authorBook;
     }
-//
+
+    @Override
+    public boolean matches(String search) {
+        if (!super.matches(search)) {
+            if (getAuthorBook() == search) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //
 //    @Override
 //    public boolean isToExpensive() {
 //        if (costProduct > 1_000) {

@@ -30,13 +30,4 @@ public class ProductRepository {
         return items;
     }
 
-    // полностью вычищает репозиторий
-//    public Product[] removeAll() {
-//        Product[] product = new Product[0];
-//        return product;
-//    }
-
-//    public boolean matches1(Product prod, String search) {
-//        return prod.getNameProduct().contains(search);
-//    }
 }
