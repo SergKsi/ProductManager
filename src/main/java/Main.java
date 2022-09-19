@@ -1,8 +1,8 @@
 public class Main {
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        Product book = new Book(
 //                15,
-//                "Весна",
+//                "Весна1",
 //                1500,
 //                "Шукшин");
 //        Product smartphone = new Smartphone(
@@ -10,8 +10,6 @@ public class Main {
 //                "Smartphone1",
 //                9500,
 //                "Apple");
-//        smartphone.setCostProduct(2000);
-//        smartphone.used();
-//        book.save(book);
-    }
+//        System.out.println(book.matches("Шукшин1"));;
+//    }
 }

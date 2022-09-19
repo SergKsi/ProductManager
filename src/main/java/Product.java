@@ -13,10 +13,6 @@ public class Product {
         return id;
     }
 
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-
     public String getNameProduct() {
         return nameProduct;
     }
@@ -40,7 +36,16 @@ public class Product {
 //            return false;
 //        }
 //    }
-//
+
+    // подходит ли продукт поисковому запросу исходя из названия
+    public boolean matches(String search) {
+        if (getNameProduct() == search) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 //    public void used () {
 //        System.out.println("Проудкт " + nameProduct + "используется" );
 //    }
