@@ -21,18 +21,7 @@ public class ProductManager {
         return repo.getItems();
     }
 
-
-//    public Product[] searchBy(String text) {
-//        Product[] result = new Product[0]; // тут будем хранить подошедшие запросу продукт
-//        for (Product product : getProd()) {
-//            if (matches(product, text)) {
-//                add(product); // записать элемент найденный по запросу
-//            }
-//        }
-//        return result;
-//    }
-
-    public Product[] searchBy1(String text) {
+    public Product[] searchBy(String text) {
         Product[] product = getProd(); // в product грузим все элементы
         int count = 0;                  // счетчик для определения длины нового массива
         for (int i = 0; i < getProd().length; i++) {

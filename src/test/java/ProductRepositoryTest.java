@@ -21,8 +21,9 @@ public class ProductRepositoryTest {
         repo.save(items5);
     }
 
+    // получать все сохранённые элементы
     @Test
-    public void testSave() {
+    public void testGetAllElments() {
 
         Product[] expected = {items1, items2, items3, items4, items5};
         Product[] actual = repo.getItems();
@@ -30,6 +31,20 @@ public class ProductRepositoryTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    // добавление элемента
+    @Test
+    public void testAdd() {
+
+        Product items6 = new Smartphone(19, "Smartphone", 96500, "Sony");
+
+        repo.save(items6);
+        Product[] expected = {items1, items2, items3, items4, items5, items6};
+        Product[] actual = repo.getItems();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    // удаление элемента по id
     @Test
     public void testRemoveById() {
         repo.removeById(items4.getId());
